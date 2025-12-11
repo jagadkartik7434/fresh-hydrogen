@@ -1,14 +1,11 @@
 {
   "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
-  "framework": "vite",
   "outputDirectory": "dist/client",
+  "framework": "vite",
   "functions": {
     "dist/server/index.js": {
       "memory": 1024,
-      "maxDuration": 30,
-      "runtime": "edge"
+      "maxDuration": 30
     }
   },
   "routes": [
@@ -16,11 +13,7 @@
       "src": "/assets/(.*)",
       "headers": {
         "cache-control": "public, max-age=31536000, immutable"
-      },
-      "continue": true
-    },
-    {
-      "handle": "filesystem"
+      }
     },
     {
       "src": "/(.*)",
