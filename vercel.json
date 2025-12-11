@@ -1,13 +1,8 @@
 {
+  "version": 3,
   "buildCommand": "npm run build",
   "outputDirectory": "dist/client",
   "framework": "vite",
-  "functions": {
-    "dist/server/index.js": {
-      "memory": 1024,
-      "maxDuration": 30
-    }
-  },
   "rewrites": [
     {
       "source": "/assets/(.*)",
@@ -15,7 +10,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/dist/server/index.js"
+      "destination": "/"
     }
   ]
 }
